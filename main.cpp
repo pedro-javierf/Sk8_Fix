@@ -160,8 +160,8 @@ unsigned int CheckCalc(char * savegame, char * r12mem)
 
 		//Gets byte at r3, merges it with byte at r3+1
 		
-		r3 = ((unsigned char)r12mem[r3] << 8) | (unsigned char)r12mem[r3 + 1]; //forget this -> It's ok but compiler fucks it when using [r3+1] In addition you have to use little endian bitch
-		r3 = _byteswap_ushort(r3); //Since nds is little endian and my PC uses big endian I'll convert it when reading from memory
+		r3 = ((unsigned char)r12mem[r3] << 8) | (unsigned char)r12mem[r3 + 1]; 
+		r3 = _byteswap_ushort(r3); 
 								   //Unsigned int is 2 bytes -> 16 bits -> ushort
 
 								   //Boring XORs and shifts right here..
